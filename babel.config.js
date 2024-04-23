@@ -89,6 +89,15 @@ module.exports = function getBabelConfig(api) {
     plugins.push([
       'babel-plugin-replace-imports',
       {
+        test: /date-fns-jalali/i,
+        replacer: 'date-fns-jalali-v3',
+        ignoreFilenames: 'AdapterDateFnsJalali.ts',
+      },
+      'replace-date-fns-jalali-imports',
+    ]);
+    plugins.push([
+      'babel-plugin-replace-imports',
+      {
         test: /date-fns/i,
         replacer: 'date-fns-v3',
         ignoreFilenames: 'AdapterDateFns.ts',

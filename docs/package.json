@@ -53,6 +53,7 @@
     "cross-env": "^7.0.3",
     "date-fns": "^2.30.0",
     "date-fns-jalali": "^2.21.3-1",
+    "date-fns-jalali-v3": "https://registry.npmjs.org/date-fns-jalali/-/date-fns-jalali-3.2.0-0.tgz",
     "date-fns-v3": "https://registry.npmjs.org/date-fns/-/date-fns-3.2.0.tgz",
     "dayjs": "^1.11.10",
     "doctrine": "^3.0.0",
