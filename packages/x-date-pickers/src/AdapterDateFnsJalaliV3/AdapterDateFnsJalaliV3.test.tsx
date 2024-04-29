@@ -9,7 +9,6 @@ import {
 } from 'test/utils/pickers';
 import { enUS } from 'date-fns-jalali/locale/en-US';
 import { faIR } from 'date-fns-jalali/locale/fa-IR';
-import { AdapterMomentJalaali } from '@mui/x-date-pickers/AdapterMomentJalaali';
 import { AdapterFormats } from '@mui/x-date-pickers/models';
 
 describe('<AdapterDateFnsJalali />', () => {
@@ -17,7 +16,7 @@ describe('<AdapterDateFnsJalali />', () => {
 
   describe('Adapter localization', () => {
     it('Formatting', () => {
-      const adapter = new AdapterMomentJalaali();
+      const adapter = new AdapterDateFnsJalali();
 
       const expectDate = (format: keyof AdapterFormats, expectedWithFaIR: string) => {
         const date = adapter.date('2020-02-01T23:44:00.000Z')!;

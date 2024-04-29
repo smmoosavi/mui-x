@@ -56,6 +56,11 @@ import {
   MuiPickersAdapter,
 } from '../models';
 
+console.log(module.children.slice(0, 3).map(f => f.filename.replace('/home/seyyed/project/my-github/date-fns-project/', '')))
+// console.log(module.children.map(f => f.filename))
+console.log(module.id)
+
+
 const formatTokenMap: FieldFormatTokenMap = {
   // Year
   y: { sectionType: 'year', contentType: 'digit', maxLength: 4 },
