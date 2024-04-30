@@ -87,15 +87,24 @@ module.exports = function getBabelConfig(api) {
     // The plugin is patched to only run on `AdapterDateFnsV3.ts`.
     // TODO: remove when we upgrade to date-fns v3 by default.
 
-    // plugins.push([
-    //   'babel-plugin-replace-imports',
-    //   {
-    //     test: /date-fns-jalali/i,
-    //     replacer: 'date-fns-jalali-v3',
-    //     ignoreFilenames: 'AdapterDateFnsJalali.ts',
-    //   },
-    //   'replace-date-fns-jalali-imports',
-    // ]);
+    plugins.push([
+      'babel-plugin-replace-imports',
+      {
+        test: /date-fns-jalali/i,
+        replacer: 'date-fns-jalali-v3',
+        ignoreFilenames: 'AdapterDateFnsJalali.ts',
+      },
+      'replace-date-fns-jalali-imports',
+    ]);
+
+    plugins.push([
+      'babel-plugin-replace-imports',
+      {
+        test: /date-fns/i,
+        replacer: 'date-fns-v3',
+        ignoreFilenames: 'AdapterDateFns.ts',
+      },
+    ]);
 
     // plugins.push([
     //   'babel-plugin-replace-imports',
@@ -118,17 +127,17 @@ module.exports = function getBabelConfig(api) {
     //   },
     // ]);
 
-    plugins.push([
-      'babel-plugin-replace-imports',
-      {
-        test: /date-fns(-jalali)?/i,
-        replacer: (i, ...args) => {
-          console.log(i, args)
-          return i + '-v3'
-        },
-        ignoreFilenames: 'AdapterDateFns.ts',
-      },
-    ]);
+    // plugins.push([
+    //   'babel-plugin-replace-imports',
+    //   {
+    //     test: /date-fns(-jalali)?/i,
+    //     replacer: (i, ...args) => {
+    //       console.log(i, args)
+    //       return i + '-v3'
+    //     },
+    //     ignoreFilenames: 'AdapterDateFns.ts',
+    //   },
+    // ]);
   }
 
   if (process.env.NODE_ENV === 'production') {
