@@ -109,6 +109,15 @@ module.exports = function getBabelConfig(api) {
     //   },
     // ]);
 
+    // plugins.push([
+    //   'babel-plugin-replace-imports',
+    //   {
+    //     test: /date-fns-jalali/i,
+    //     replacer: "date-fns-jalali-v3",
+    //     ignoreFilenames: 'AdapterDateFns.ts',
+    //   },
+    // ]);
+
     plugins.push([
       'babel-plugin-replace-imports',
       {

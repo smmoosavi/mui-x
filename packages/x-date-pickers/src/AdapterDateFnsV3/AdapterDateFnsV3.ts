@@ -1,7 +1,8 @@
 /* eslint-disable class-methods-use-this */
 // TODO remove when date-fns-v3 is the default
 // @ts-nocheck
-import { addDays } from 'date-fns/addDays';
+import { addDays } from "date-fns-jalali/addDays";
+// import { addDays } from 'date-fns/addDays';
 import { addSeconds } from 'date-fns/addSeconds';
 import { addMinutes } from 'date-fns/addMinutes';
 import { addHours } from 'date-fns/addHours';
