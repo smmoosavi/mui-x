@@ -92,7 +92,7 @@ module.exports = function getBabelConfig(api) {
       {
         test: /date-fns-jalali/i,
         replacer: 'date-fns-jalali-v3',
-        ignoreFilenames: 'AdapterDateFnsJalali.ts',
+        filenameIncludes: 'src/AdapterDateFnsJalaliV3/'
       },
       'replace-date-fns-jalali-imports',
     ]);
@@ -100,9 +100,10 @@ module.exports = function getBabelConfig(api) {
     plugins.push([
       'babel-plugin-replace-imports',
       {
-        test: /date-fns/i,
-        replacer: 'date-fns-v3',
-        ignoreFilenames: 'AdapterDateFns.ts',
+        test: /date-fns\//i,
+        replacer: 'date-fns-v3/',
+        filenameIncludes: 'src/AdapterDateFnsV3/'
+
       },
     ]);
 
